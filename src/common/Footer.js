@@ -13,7 +13,7 @@ function Footer() {
       <div className="footer__top">
         <div className="footer__top--left">
           <img
-            src="https://logo-logos.com/wp-content/uploads/2016/10/Freelancer_logo.png"
+            src="https://s3.amazonaws.com/fjds/gig_company/original/20/freelancer-logo.png?1587072521"
             alt="logo"
           />
           <p>

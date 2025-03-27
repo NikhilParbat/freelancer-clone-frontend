@@ -17,7 +17,7 @@ function DashboardContent() {
   return (
     <div className="dashboardContent">
       {/* Card */}
-      <div className="dashboardContent__card">
+      {/* <div className="dashboardContent__card">
         <span>
           <h4>Refer a friend, get $20 USD</h4>
           <p>
@@ -34,7 +34,7 @@ function DashboardContent() {
             alt=""
           />
         </span>
-      </div>
+      </div> */}
 
       {/* Projects */}
       <div className="dashboardContent__projects">

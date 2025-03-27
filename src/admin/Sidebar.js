@@ -31,9 +31,7 @@ function Sidebar() {
       <div className="sidebar__cardone">
         <div className="sidebar__cardone--title">
           <p>Welcome back,</p>
-          <h3>
-            {user.displayName ? user.displayName : "Dipendra Bahadur Chand"}
-          </h3>
+          <h3>{user.name ? user?.name : "Enter Valid Name"}</h3>
           <span>
             <h3>-{user?.email}</h3>
             <h6>FREE MEMBER</h6>
@@ -90,7 +88,7 @@ function Sidebar() {
         </span>
       </div>
 
-      {/* Polls */}
+      {/* Polls
       <div className="sidebar__cardthree">
         <h4>Polls</h4>
         <FormControl component="fieldset">
@@ -116,7 +114,7 @@ function Sidebar() {
             </Button>
           </p>
         </FormControl>
-      </div>
+      </div> */}
     </div>
   );
 }

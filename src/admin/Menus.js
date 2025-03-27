@@ -64,7 +64,7 @@ function Menus() {
           <span>
             {/* <h4>{user?.email}</h4> */}
             <h4>{user?.email ? user?.email : "chand.dipendra19@gmail.com"}</h4>
-            <h5>Rs. 95825.00</h5>
+            <h5>Rs.{user?.balance}</h5>
           </span>
           <ExpandMoreIcon
             aria-controls="fade-menu"

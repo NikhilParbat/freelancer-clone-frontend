@@ -91,11 +91,13 @@
   font-size: 30;
   font-weight: 500;
   margin-top: 20px;
+  margin-bottom: 15px;
 }
 
 .login__formBottom > h5 > a {
   text-decoration: none;
   color: blue;
+
 }
 
 .login__formBottom > h5 > a:hover {

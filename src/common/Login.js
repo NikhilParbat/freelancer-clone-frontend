@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./Login.css";
-import Checkbox from "@material-ui/core/Checkbox";
-import { auth, provider } from "./firebase";
-import { actionTypes } from "./reducer";
+import Checkbox from "@mui/material/Checkbox";
 import { useStateValue } from "./StateProvider";
+import { actionTypes } from "./reducer";
 
 function Login() {
   const history = useNavigate();
@@ -17,30 +16,39 @@ function Login() {
     setChecked(event.target.checked);
   };
 
-  const signIn = (e) => {
+  const signIn = async (e) => {
     e.preventDefault();
-    //some fancy firebase login...
-    auth
-      .signInWithEmailAndPassword(email, password)
-      .then((auth) => {
-        history.push("/dashboard");
-      })
-      .catch((error) => alert(error.message));
-  };
 
-  const signInGoogle = () => {
-    //sign in code..
-    auth
-      .signInWithPopup(provider)
-      .then((result) => {
-        //console.log(result);
+    try {
+      const response = await fetch(
+        "https://freelancer-backend-38jl.onrender.com/api/auth/login",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ email, password }),
+        }
+      );
+
+      const data = await response.json();
+
+      if (response.ok) {
+        // Store token in localStorage or context
+        localStorage.setItem("token", data.token);
+
         dispatch({
           type: actionTypes.SET_USER,
-          user: result.user,
+          user: data.user, // Assuming backend returns user details
         });
-        history.push("/dashboard");
-      })
-      .catch((error) => alert(error.message));
+
+        history("/dashboard");
+      } else {
+        alert(data.message || "Login failed");
+      }
+    } catch (error) {
+      alert("Error logging in: " + error.message);
+    }
   };
 
   return (
@@ -54,11 +62,6 @@ function Login() {
             />
           </Link>
           <h4>Welcome Back</h4>
-          <img
-            onClick={signInGoogle}
-            src="https://pngimage.net/wp-content/uploads/2018/06/login-with-google-png-4.png"
-            alt="login"
-          />
         </div>
         <h4> OR </h4>
         <div className="login__formMiddle">
@@ -76,14 +79,14 @@ function Login() {
           />
           <h5>
             <Checkbox
-              checked="false"
+              checked={checked}
               color="primary"
-              onClick={handleChange}
+              onChange={handleChange}
               inputProps={{ "aria-label": "secondary checkbox" }}
             />
             Remember Me
             <span className="login__formMiddle-space">
-              <Link>Forgot Password?</Link>
+              <Link to="/forgot-password">Forgot Password?</Link>
             </span>
           </h5>
           <button
@@ -91,7 +94,6 @@ function Login() {
             type="submit"
             className="login__signInButton"
           >
-            {" "}
             Log In
           </button>
         </div>
@@ -101,10 +103,6 @@ function Login() {
             Don't have an account?
             <Link to="/signup"> Sign Up</Link>
           </h5>
-          <img
-            src="https://www.teleware.com/wp-content/uploads/2018/08/Google-play-and-istore-badges-300x104.jpg"
-            alt="apple"
-          />
         </div>
       </div>
     </div>

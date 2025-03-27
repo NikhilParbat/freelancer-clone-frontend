@@ -12,8 +12,8 @@ import JobCategory from "./common/JobCategory";
 import Footer from "./common/Footer";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
-import Signup from "./pages/Signup";
-import Login from "./pages/Login";
+import Signup from "./common/Signup";
+import Login from "./common/Login";
 import PostJob from "./pages/PostJob";
 import Dashboard from "./admin/Dashboard";
 
