@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom"; // Import useNavigate hook
 import "./AddJob.css";
 
 const AddJobs = () => {
@@ -14,6 +15,8 @@ const AddJobs = () => {
   });
 
   const [message, setMessage] = useState("");
+  
+  const navigate = useNavigate(); // Initialize navigate hook
 
   // 🟡 Step 1: Load user ID from localStorage (or auth context)
   useEffect(() => {
@@ -37,9 +40,12 @@ const AddJobs = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:5000/api/jobs", jobData);
+      const response = await axios.post("https://freelancer-backend-38jl.onrender.com/api/jobs/create", jobData);
       console.log("Job Posted:", response.data);
       setMessage("Job posted successfully!");
+
+      // Redirect to another page, e.g., the job listings page
+      navigate("/client-dashboard"); // Change the route as per your app's structure
 
       // Reset form but keep postedBy intact
       setJobData((prev) => ({

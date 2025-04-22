@@ -1,0 +1,65 @@
+.freelancer-dashboard-wrapper {
+    border: 2px solid #ddd; /* Light border around the whole dashboard */
+    border-radius: 12px; /* Rounded corners for the box */
+    padding: 2rem; /* Space between the border and the content */
+    margin: 1.5rem auto; /* Center the box horizontally */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    display: flex;
+    flex-direction: column;
+    flex: 0.7;
+    max-width: 1000px; /* Optional: Set max width for the container */
+  }
+  
+  .freelancer-dashboard {
+    display: flex;
+    flex-direction: column;
+    flex: 0.7;
+    align-items: center; /* Center content horizontally */
+    width: 100%; /* Ensure the freelancer-dashboard takes full width of the wrapper */
+  }
+  
+  .job-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 800px; /* You can adjust this to control how wide each card gets */
+    margin: 0 auto; /* Center the job-list horizontally */
+  }
+  
+  .job-card {
+    background-color: #f7f7f7;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    /* width: 100%; */
+  }
+  
+  .job-card h3 {
+    margin-bottom: 0.5rem;
+  }
+  
+  .job-card button {
+    margin-top: 0.5rem;
+    padding: 6px 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  h2 {
+    font-size: 2rem; /* Larger font size */
+    font-weight: bold; /* Make it bold */
+    color: #333; /* Dark gray color */
+    text-transform: uppercase; /* Make it all caps */
+    letter-spacing: 1px; /* Add some space between letters */
+    margin-bottom: 1.5rem; /* Add some space below the heading */
+    text-align: left; /* Center align the heading */
+    padding: 1rem 0; /* Padding above and below the heading */
+    background: linear-gradient(to right, #05a0ee, #051316); /* Gradient background */
+    color: transparent; /* Make text transparent for gradient */
+    -webkit-background-clip: text; /* Clip the gradient to the text */
+  }
+  

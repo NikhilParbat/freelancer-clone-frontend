@@ -1,5 +1,5 @@
 import React from "react";
-import "./F_Dashboard.css";
+import "./C_Dashboard.css";
 import DashboardContent from "./DashboardContent";
 import Menus from "./Menus";
 import Sidebar from "./Sidebar";

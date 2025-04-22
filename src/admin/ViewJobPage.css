@@ -1,0 +1,13 @@
+.JobDetail {
+    padding-bottom: 64px;
+    background-color: #f0f0f0;
+  }
+  
+  JobDetail__main {
+    display: flex;
+    flex: 1;
+    margin-left: 30px;
+    margin-right: 30px;
+    padding-left: 50px;
+    padding-right: 50px;
+  }

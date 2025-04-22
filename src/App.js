@@ -18,6 +18,8 @@ import PostJob from "./admin/PostProject";
 import Dashboard from "./admin/F_Dashboard";
 import F_Dashboard from "./admin/F_Dashboard";
 import C_Dashboard from "./admin/C_Dashboard";
+import JobDetail from "./admin/JobDetailPage";
+import ViewJobDetail from "./admin/ViewJobPage";
 
 // function App() {
 //   return (
@@ -44,6 +46,8 @@ function App() {
           <Route path="/post-job" element={<PostJob />} />
           <Route path="/freelancer-dashboard" element={<F_Dashboard />} />
           <Route path="/client-dashboard" element={<C_Dashboard />} />
+          <Route path="/job/:id" element={<JobDetail />} />
+          <Route path="/job/view/:id" element={<ViewJobDetail />} />
           <Route
             path="/dashboard"
             element={

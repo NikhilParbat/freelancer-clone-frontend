@@ -12,7 +12,7 @@ function Signup() {
 
   const register = async (e) => {
     e.preventDefault();
-    if (!email || !password || !role) {
+    if (!name ||!email || !password || !role) {
       alert("Please fill in all fields.");
       return;
     }
@@ -62,7 +62,7 @@ function Signup() {
           />
           <input
             type="email"
-            placeholder="Email or Username"
+            placeholder="Email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
