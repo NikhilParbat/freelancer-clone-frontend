@@ -48,7 +48,7 @@ function Sidebar() {
           <span>
             <ContactMailIcon />
             <p>
-              <Link>Pass the US English Exam - Level 1</Link>
+              <Link>Verify your Profile</Link>
             </p>
             <p>+20%</p>
           </span>
@@ -62,7 +62,7 @@ function Sidebar() {
               </Link>
             </p>
           </span>
-          <p>$0.00USD</p>
+          <p>Rs.{user?.balance}</p>
         </div>
       </div>
 

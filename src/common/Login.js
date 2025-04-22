@@ -34,15 +34,25 @@ function Login() {
       const data = await response.json();
 
       if (response.ok) {
-        // Store token in localStorage or context
+        // Save token, userId, and role
         localStorage.setItem("token", data.token);
+        localStorage.setItem("userId", data.user._id);
+        localStorage.setItem("role", data.user.role);
 
+        // Update global state
         dispatch({
           type: actionTypes.SET_USER,
-          user: data.user, // Assuming backend returns user details
+          user: data.user,
         });
 
-        history("/dashboard");
+        // Redirect based on role
+        if (data.user.role === "freelancer") {
+          history("/freelancer-dashboard");
+        } else if (data.user.role === "client") {
+          history("/client-dashboard");
+        } else {
+          history("/dashboard"); // fallback
+        }
       } else {
         alert(data.message || "Login failed");
       }
@@ -63,7 +73,9 @@ function Login() {
           </Link>
           <h4>Welcome Back</h4>
         </div>
+
         <h4> OR </h4>
+
         <div className="login__formMiddle">
           <input
             type="email"
@@ -77,6 +89,7 @@ function Login() {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
+
           <h5>
             <Checkbox
               checked={checked}
@@ -89,6 +102,7 @@ function Login() {
               <Link to="/forgot-password">Forgot Password?</Link>
             </span>
           </h5>
+
           <button
             onClick={signIn}
             type="submit"
@@ -97,6 +111,7 @@ function Login() {
             Log In
           </button>
         </div>
+
         <div className="login__formBottom">
           <hr />
           <h5>

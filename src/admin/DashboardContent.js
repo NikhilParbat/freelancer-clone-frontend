@@ -1,6 +1,6 @@
 import React from "react";
 import "./DashboardContent.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
 import EmojiEventsIcon from "@mui/icons-material/EmojiEvents";
 import {
@@ -14,6 +14,8 @@ import {
 } from "@mui/material";
 
 function DashboardContent() {
+  const navigate = useNavigate();
+
   return (
     <div className="dashboardContent">
       {/* Card */}
@@ -40,7 +42,7 @@ function DashboardContent() {
       <div className="dashboardContent__projects">
         <div className="dashboardContent__projects--heading">
           <h3>Recent Projects</h3>
-          <button>Post a Project</button>
+          <button onClick={() => navigate("/post-job")}>Post a Project</button>
         </div>
         <div className="dashboardContent__projects--table">
           <TableContainer component={Paper}>

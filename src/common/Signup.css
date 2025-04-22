@@ -100,3 +100,34 @@
 .signup__formBottom > h5 > a:hover {
   text-decoration: underline;
 }
+
+/* ✅ New styling for role toggle button */
+.role-toggle {
+  display: flex;
+  justify-content: space-between;
+  background-color: #f3f3f3;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+
+.toggle-option {
+  flex: 1;
+  padding: 12px;
+  text-align: center;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  background-color: #e0e0e0;
+  color: #333;
+}
+
+.toggle-option:hover {
+  background-color: #d5d5d5;
+}
+
+.toggle-option.active {
+  background-color: #007fed;
+  color: white;
+}

@@ -11,11 +11,13 @@ import Portfolio from "./common/Portfolio";
 import JobCategory from "./common/JobCategory";
 import Footer from "./common/Footer";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Home from "./pages/Home";
+// import Home from "./pages/Home";
 import Signup from "./common/Signup";
 import Login from "./common/Login";
-import PostJob from "./pages/PostJob";
-import Dashboard from "./admin/Dashboard";
+import PostJob from "./admin/PostProject";
+import Dashboard from "./admin/F_Dashboard";
+import F_Dashboard from "./admin/F_Dashboard";
+import C_Dashboard from "./admin/C_Dashboard";
 
 // function App() {
 //   return (
@@ -39,6 +41,9 @@ function App() {
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
+          <Route path="/post-job" element={<PostJob />} />
+          <Route path="/freelancer-dashboard" element={<F_Dashboard />} />
+          <Route path="/client-dashboard" element={<C_Dashboard />} />
           <Route
             path="/dashboard"
             element={
