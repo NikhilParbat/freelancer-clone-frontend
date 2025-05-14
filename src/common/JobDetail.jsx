@@ -19,8 +19,6 @@ function JobDetail() {
 
         // Fetch interested user details
         const usersRes = await axios.get(`https://freelancer-backend-38jl.onrender.com/api/jobs/${id}/interested-users`);
-        console.log("Interested Users:", usersRes.data);
-        console.log("length: ", interestedUsers.length);
         setInterestedUsers(usersRes.data.interestedUsers);
       } catch (error) {
         console.error("Failed to fetch job or interested users", error);

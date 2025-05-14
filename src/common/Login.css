@@ -1,5 +1,6 @@
 .login {
   text-align: center;
+  margin-top: 50px;
 }
 
 .login__form {
@@ -46,6 +47,38 @@
   margin-bottom: 10px;
 }
 
+/* Fixed password field styles */
+.password-field {
+  position: relative;
+  width: 100%;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.password-field > input {
+  width: 100%;
+  padding: 15px;
+  box-sizing: border-box;
+  padding-right: 45px; /* Increased space for the icon */
+}
+
+/* Target the MUI IconButton specifically */
+.password-field .MuiIconButton-root {
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 8px;
+  color: rgba(0, 0, 0, 0.54);
+  z-index: 2;
+}
+
+/* Additional style for the icon itself */
+.password-field .MuiSvgIcon-root {
+  font-size: 20px;
+}
+
 .login__formMiddle > h5 {
   font-weight: 500;
 }
@@ -73,9 +106,8 @@
 }
 
 .login__formMiddle-space {
-  margin-left: 150px;
+  margin-left: 275px;
 }
-
 .login__formBottom {
   display: flex;
   flex-direction: column;

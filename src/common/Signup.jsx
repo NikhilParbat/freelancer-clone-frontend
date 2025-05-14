@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import "./Signup.css";
 import { Link, useNavigate } from "react-router-dom";
 import Checkbox from "@mui/material/Checkbox";
+import IconButton from "@mui/material/IconButton";
+import Visibility from "@mui/icons-material/Visibility";
+import VisibilityOff from "@mui/icons-material/VisibilityOff";
 
 function Signup() {
   const navigate = useNavigate();
@@ -9,10 +12,11 @@ function Signup() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [role, setrole] = useState("client");
+  const [showPassword, setShowPassword] = useState(false);
 
   const register = async (e) => {
     e.preventDefault();
-    if (!name ||!email || !password || !role) {
+    if (!name || !email || !password || !role) {
       alert("Please fill in all fields.");
       return;
     }
@@ -55,7 +59,7 @@ function Signup() {
         <h4> OR </h4>
         <div className="signup__formMiddle">
           <input
-            type="name"
+            type="text"
             placeholder="Enter Name"
             value={name}
             onChange={(e) => setName(e.target.value)}
@@ -66,27 +70,35 @@ function Signup() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
-          <input
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
 
-          {/* 🔥 Stylish Toggle Buttons */}
+          {/* Password field with visibility toggle */}
+          <div className="password-field">
+            <input
+              type={showPassword ? "text" : "password"}
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+            <IconButton
+              className="password-toggle"
+              onClick={() => setShowPassword((prev) => !prev)}
+              edge="end"
+              size="small"
+            >
+              {showPassword ? <VisibilityOff /> : <Visibility />}
+            </IconButton>
+          </div>
+
+          {/* Role toggle buttons */}
           <div className="role-toggle">
             <div
-              className={`toggle-option ${
-                role === "client" ? "active" : ""
-              }`}
+              className={`toggle-option ${role === "client" ? "active" : ""}`}
               onClick={() => setrole("client")}
             >
               I want to hire
             </div>
             <div
-              className={`toggle-option ${
-                role === "freelancer" ? "active" : ""
-              }`}
+              className={`toggle-option ${role === "freelancer" ? "active" : ""}`}
               onClick={() => setrole("freelancer")}
             >
               I want to work
