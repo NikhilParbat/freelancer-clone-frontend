@@ -10,7 +10,7 @@ function JobDetailPage() {
 
       {/* Main */}
       <div className="JobDetail__main">
-        <JobDetail/>
+        <JobDetail />
       </div>
     </div>
   );

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./Menus.css";
 import { useNavigate } from "react-router-dom";
 import SearchIcon from "@mui/icons-material/Search";
@@ -15,8 +15,14 @@ import Fade from "@mui/material/Fade";
 function Menus() {
   const [{ user }, dispatch] = useStateValue();
   const navigate = useNavigate();
-  const [anchorEl, setAnchorEl] = React.useState(null);
+  const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
+  const [id, setId] = useState("");
+
+  useEffect(() => {
+    const userId = localStorage.getItem("userId");
+    setId(userId ?? "");
+  });
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -24,6 +30,16 @@ function Menus() {
 
   const handleClose = () => {
     setAnchorEl(null);
+  };
+
+  const handleProfile = () => {
+    if (user?.role === "client") {
+      navigate(`/client/${id}`);
+    } else if (user?.role === "freelancer") {
+      navigate(`/freelancer/${id}`);
+    } else {
+      navigate("/login");
+    }
   };
 
   const handleAuthentication = () => {
@@ -67,7 +83,7 @@ function Menus() {
             src={
               user?.photoURL
                 ? user.photoURL
-                : "http://dipendrachand.com.np/images/profilepic.jpg"
+                : "https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
             }
           />
           <span>
@@ -87,7 +103,7 @@ function Menus() {
             onClose={handleClose}
             TransitionComponent={Fade}
           >
-            <MenuItem onClick={handleClose}>Profile</MenuItem>
+            <MenuItem onClick={handleProfile}>Profile</MenuItem>
             <MenuItem onClick={handleClose}>My Account</MenuItem>
             <MenuItem onClick={handleAuthentication}>Logout</MenuItem>
           </Menu>

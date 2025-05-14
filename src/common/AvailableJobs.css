@@ -61,5 +61,34 @@
     background: linear-gradient(to right, #05a0ee, #051316); /* Gradient background */
     color: transparent; /* Make text transparent for gradient */
     -webkit-background-clip: text; /* Clip the gradient to the text */
+    background-clip: text;
+  }
+  /* Filters */
+.job-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  width: 100%;
+  justify-content: center;
   }
   
+  .job-filters input {
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  flex: 1;
+  min-width: 250px;
+  transition: border-color 0.2s ease;
+  }
+  
+  .job-filters input:focus {
+  border-color: #007bff;
+  outline: none;
+  }
+  
+  .domain-select {
+  min-width: 250px;
+  flex: 1;
+  }

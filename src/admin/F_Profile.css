@@ -1,0 +1,136 @@
+/* Reset & Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    background-color: #f9fafb;
+    color: #1f2937;
+  }
+  
+  /* Container */
+  .client-profile-container {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center;*/
+    /* align-items: center;  */
+    min-height: 100vh;
+    width: 100%;
+  }
+  
+  /* Card */
+  .profile-card {
+    background-color: #ffffff;
+    align-items: center;
+    width: 700px;
+    padding: 32px;
+    margin: 0 auto;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 24px;
+  }
+  
+  /* Heading */
+  .profile-card h1 {
+    font-size: 24px;
+    font-weight: 600;
+    text-align: center;
+    color: #111827;
+  }
+  
+  /* Profile Header */
+  .profile-header {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+  
+  .profile-img {
+    width: 90px;
+    height: 90px;
+    border-radius: 100%;
+    object-fit: cover;
+    border: 2px solid #e5e7eb;
+  }
+  
+  .profile-header h2 {
+    font-size: 20px;
+    font-weight: 500;
+    color: #1f2937;
+  }
+  
+  .profile-header p {
+    font-size: 14px;
+    color: #6b7280;
+  }
+  
+  /* Details */
+  .profile-details {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 15px;
+    color: #374151;
+  }
+  
+  .profile-details strong {
+    color: #111827;
+    font-weight: 500;
+  }
+  
+  /* Skills */
+  .skills-section {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .skills-section strong {
+    font-weight: 500;
+    color: #111827;
+  }
+  
+  .skills-section ul {
+    list-style: none;
+    padding-left: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  
+  .skills-section li {
+    background-color: #f3f4f6;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 13px;
+    color: #374151;
+  }
+  
+  /* Verification */
+  .verification-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-top: 1px solid #e5e7eb;
+    padding-top: 16px;
+  }
+  
+  .verification-section input[type="file"] {
+    font-size: 14px;
+    border: 1px solid #d1d5db;
+    padding: 6px;
+    border-radius: 6px;
+  }
+  
+  .verification-section p {
+    font-size: 14px;
+    color: #4b5563;
+    margin: 0;
+  }
+  

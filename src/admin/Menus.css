@@ -2,10 +2,10 @@
   margin-bottom: 20px;
 }
 .menus__top {
-  padding-right: 80px;
+  /* padding-right: 80px; */
   padding-left: 20px;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
 
 .menus__top--left {
@@ -52,7 +52,7 @@
 
 .menus__top--right {
   display: flex;
-  flex: 0.1;
+  flex: 0.15;
   align-items: center;
   border: 1px solid lightgray;
 }

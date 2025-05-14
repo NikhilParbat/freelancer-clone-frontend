@@ -20,6 +20,8 @@ import F_Dashboard from "./admin/F_Dashboard";
 import C_Dashboard from "./admin/C_Dashboard";
 import JobDetail from "./admin/JobDetailPage";
 import ViewJobDetail from "./admin/ViewJobPage";
+import F_Profile from "./admin/F_Profile";
+import C_Profile from "./admin/C_Profile";
 
 // function App() {
 //   return (
@@ -48,6 +50,8 @@ function App() {
           <Route path="/client-dashboard" element={<C_Dashboard />} />
           <Route path="/job/:id" element={<JobDetail />} />
           <Route path="/job/view/:id" element={<ViewJobDetail />} />
+          <Route path="/freelancer/:id" element={<F_Profile />} />
+          <Route path="/client/:id" element={<C_Profile />} />
           <Route
             path="/dashboard"
             element={
